@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+## 개발 2팀 퍼블 월간스터디 7월 과제 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+😒회사에서 gitlab > hstudy 권한 받고 클론 받아야함, 
 
-## Available Scripts
+[실행방법]<br/>
 
-In the project directory, you can run:
+npm i 로 패키지 설치<br/>
+npm start으로 로컬서버 실행 
+>>(실행 시키시면 터미널에 url나옵니다! ex.http://localhost:3000/)
 
-### `npm start`
+- typescript, scss설치 해놨으니까 따로 설치 안해도 됩니다. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+[폴더별 설명]
+- node_modules : package.json에서 다운되어있는 라이브러리들이 나오는데, 
+그 라이브러리들이 설치된 폴더(깃에 업로드XX)
+- src : 대부분의 작업파일은 여기에<br/>
+   ㄴ common : 프로젝트 공통적으로 사용되는 파일<br/>
+   ㄴ ★ components : 안에 작업할 폴더를 생성해 css/scss, 컴포넌트를 넣어놓는곳
+- .gitignore : git에 올라가면 안되는 파일들 작성해두는곳
+- package-lock.json : package.json 설치하면서 생기는 파일. (삭제하여도 무방,깃 업로드X)
+- tsconfig.json : 타입스크립트 환경설정하는 파일 (기본셋팅해놓음)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[import 할때 절대경로 사용법]
 
-### `npm run build`
+src안에 있는 파일 가져올때
+-> @src/ 
+```
+import styles from "@src/scss/layout.scss";
+```
+components 안에 있는 컴포넌트 가져올때
+->@components/
+```
+import {파일명} from "@components/TodoInput";
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+components 파일명 반드시 첫글자 대문자로 써야함. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+일딴, 건강챙기구 과제하긔....ㅠ_ㅠ 
