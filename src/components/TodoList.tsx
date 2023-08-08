@@ -1,5 +1,7 @@
-import styles from "@src/scss/layout.scss";
+import styles from "../scss/layout.scss";
 import React, {useState, useEffect} from "react";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TodoList = () =>{
     const [todo, setTodo] = useState<string[]>([]);
@@ -20,21 +22,19 @@ const TodoList = () =>{
         <>
         <ul className={styles.TodoList__wrap}>
         {
-        todo.map(
-            function(Value,i){
+        todo.map((value,i)=>{
                 return(
                     <li key={i}>
-                        <p>{Value}</p>
-                        <button onClick={(e)=>{e.stopPropagation; deleteTodo(i)}}>DEL</button>
+                        <p>{value}</p>
+                        <button onClick={(e)=>{e.stopPropagation(); deleteTodo(i)}}>DEL</button>
                     </li>
                 )
-            }
-        )
+            })
         }
         </ul>
         <div className={styles.TodoInput__wrap}>
             <input onChange={(e)=>setInputValue(e.target.value)} type="text" placeholder="오늘 할일 추가!" maxLength={20}></input>
-            <button onClick={addTodo}></button>
+            <button onClick={addTodo}>추가</button>
         </div>
         </>
       
